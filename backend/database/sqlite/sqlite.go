@@ -5,6 +5,7 @@ import (
 	"errors"
 
 	_ "github.com/PressureTank/AIOPass/template"
+	_ "github.com/PressureTank/AIOPass/user"
 	"go.uber.org/zap"
 	"golang.org/x/crypto/bcrypt"
 	_ "gthub.com/PressureTank/AIOPass/user"
