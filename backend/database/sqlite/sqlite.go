@@ -4,8 +4,10 @@ import (
 	"database/sql"
 	"errors"
 
+	_ "github.com/PressureTank/AIOPass/template"
 	"go.uber.org/zap"
 	"golang.org/x/crypto/bcrypt"
+	_ "gthub.com/PressureTank/AIOPass/user"
 )
 
 type SQLiteDB struct {

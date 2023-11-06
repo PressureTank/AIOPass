@@ -8,9 +8,9 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 	"go.uber.org/zap"
 
-	"github.com/neo-cypher/AIOPass/database/sqlite"
-	"github.com/neo-cypher/AIOPass/template"
-	"github.com/neo-cypher/AIOPass/user"
+	"github.com/PressureTank/AIOPass/backend/database/sqlite"
+	"github.com/PressureTank/AIOPass/backend/template"
+	"github.com/PressureTank/AIOPass/backend/user"
 )
 
 func main() {
@@ -28,23 +28,23 @@ func main() {
 
 	// Create tables if they do not exist
 	_, err = db.Exec(`
-																									CREATE TABLE IF NOT EXISTS users (
-																												id INTEGER PRIMARY KEY AUTOINCREMENT,
-																															username TEXT UNIQUE NOT NULL,
-																																		password TEXT NOT NULL
-																																				)
-																																					`)
+		CREATE TABLE IF NOT EXISTS users (
+		id INTEGER PRIMARY KEY AUTOINCREMENT,
+		username TEXT UNIQUE NOT NULL,
+		password TEXT NOT NULL
+		)
+	`)
 	if err != nil {
 		logger.Error("Error creating users table", zap.Error(err))
 		return
 	}
 
 	_, err = db.Exec(`
-																																														CREATE TABLE IF NOT EXISTS templates (
-																																																	id INTEGER PRIMARY KEY AUTOINCREMENT,
-																																																				prompt TEXT NOT NULL
-																																																						)
-																																																							`)
+		CREATE TABLE IF NOT EXISTS templates (
+		id INTEGER PRIMARY KEY AUTOINCREMENT,
+		prompt TEXT NOT NULL
+	`)
+
 	if err != nil {
 		logger.Error("Error creating templates table", zap.Error(err))
 		return
