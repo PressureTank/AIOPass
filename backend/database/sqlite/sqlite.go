@@ -4,13 +4,6 @@ import (
 	"database/sql"
 	"errors"
 
-<<<<<<< HEAD
-	_ "github.com/PressureTank/AIOPass/template"
-	_ "github.com/PressureTank/AIOPass/user"
-=======
-	_ "github.com/PressureTank/AIOPass/backend/template"
-	_ "github.com/PressureTank/AIOPass/backend/user"
->>>>>>> 9df1370 ((chore)packages: implements packages for database, template, and user ops.)
 	"go.uber.org/zap"
 	"golang.org/x/crypto/bcrypt"
 )
